@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   delete 'logout', to: 'sessions#destroy'
-  get 'shopify/oauth', to: 'shopify#oauth'
+  get 'shopify/oauth', to: 'shopify#index'
+  get 'shopify/oauth/authorize', to: 'shopify#authorize'
   post 'shopify/oauth/confirm', to: 'shopify#confirm'
 end
