@@ -4,6 +4,7 @@ class ShopifyController < ApplicationController
   def index
     # get params here
     @shop = params[:shop]
+    @code = params[:code]
     throw 'State not correct' unless session[@shop.to_sym] = params[:state]
 
     flash[:success] = 'Oauth success, login to our website to continue'
